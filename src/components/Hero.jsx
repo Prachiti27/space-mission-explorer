@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Rocket } from 'lucide-react'
 import heroImage from '../assets/heroImage.jpeg'
 import { motion } from 'framer-motion'
 import { NavLink, useNavigate } from 'react-router-dom'
@@ -39,7 +39,8 @@ const Hero = () => {
                 animate="visible"
                 variants={containerVariants}
             >
-                <motion.div className='text-2xl font-bold text-white/90' variants={itemVariants} onClick={()=>navigate('/')}>
+                <motion.div className='flex flex-row gap-2 text-2xl font-bold text-white/90' variants={itemVariants} onClick={()=>navigate('/')}>
+                    <Rocket className='size-10'/>
                     SpaceXplor
                 </motion.div>
 

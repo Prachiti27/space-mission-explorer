@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, ArrowRight } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { ChevronDown, ArrowRight, Rocket } from 'lucide-react'
 
 const faqData = [
   {
@@ -65,8 +64,6 @@ const FaqItem = ({ question, answer }) => {
 
 const About = () => {
 
-  const navigate = useNavigate()
-
   return (
     <div className='min-h-screen w-full bg-black text-white flex items-center justify-center p-4 sm:p-6 lg:p-8'>
       <div className='w-full max-w-4xl mx-auto'>
@@ -76,9 +73,10 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className='text-4xl md:text-5xl font-bold mb-4'>
+          <div className='flex flex-row justify-center gap-3 text-4xl md:text-5xl font-bold mb-4'>
             About SpaceXplor
-          </h1>
+            <Rocket className="size-15"/>
+          </div>
           <p className='text-xs md:text-sm text-neutral-300 max-w-3xl mx-auto'>
             SpaceXplor is a platform to discover and explore space missions from around the world. Our goal is to make information about humanity’s space endeavors accessible and beautifully presented.
           </p>
@@ -122,14 +120,7 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
         >
-            <motion.button
-                className="inline-flex items-center gap-3 px-8 py-3 bg-white/10 text-white font-semibold rounded-full text-md border border-white/20"
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
-                whileTap={{ scale: 0.95 }}
-                onClick={()=>navigate('/missions')}
-            >
-                Explore Missions <ArrowRight className="h-5 w-5" />
-            </motion.button>
+            
         </motion.div>
       </div>
     </div>
