@@ -1,11 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import MissionCard from '../components/MissionCard'
 import { motion } from 'framer-motion'
 import MissionModal from '../components/MissionModal'
-import missions from '../assets/assets.js'  // your imported missions data
+import missions from '../assets/assets.js'
 
-const Missions = () => {  // no prop destructuring here
+const FAVORITES_KEY = 'favoriteMissions'
+
+const Missions = () => {
   const [selectedMission, setSelectedMission] = useState(null)
+  const [favorites, setFavorites] = useState([]) // store array of missionIds
+
+  // Load favorites from localStorage once on mount
+  useEffect(() => {
+    const storedFavs = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || []
+    setFavorites(storedFavs)
+  }, [])
+
+  // Update localStorage when favorites change
+  useEffect(() => {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites))
+  }, [favorites])
 
   const openModal = (mission) => {
     setSelectedMission(mission)
@@ -13,6 +27,16 @@ const Missions = () => {  // no prop destructuring here
 
   const closeModal = () => {
     setSelectedMission(null)
+  }
+
+  const toggleFavorite = (missionId) => {
+    if (favorites.includes(missionId)) {
+      // Remove from favorites
+      setFavorites(favorites.filter(id => id !== missionId))
+    } else {
+      // Add to favorites
+      setFavorites([...favorites, missionId])
+    }
   }
 
   return (
@@ -54,6 +78,8 @@ const Missions = () => {  // no prop destructuring here
             key={mission.missionId}
             mission={mission}
             onDetailsClick={() => openModal(mission)}
+            isFavorite={favorites.includes(mission.missionId)}
+            onToggleFavorite={() => toggleFavorite(mission.missionId)}
           />
         ))}
       </motion.div>

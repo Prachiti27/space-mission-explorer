@@ -1,12 +1,12 @@
 import { ArrowRight, CalendarIcon, HeartIcon } from 'lucide-react'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 }
 
-const MissionCard = ({ mission, onDetailsClick }) => {
+const MissionCard = ({ mission, onDetailsClick, isFavorite, onToggleFavorite }) => {
   const { missionName, missionYear, missionImage, agency, agencyLogo } = mission
 
   return (
@@ -40,9 +40,19 @@ const MissionCard = ({ mission, onDetailsClick }) => {
           <ArrowRight size={16} className='relative top-[1px]' />
         </button>
 
-        <button className='w-[140px] flex items-center gap-2 px-6 py-2 rounded-full bg-white text-black shadow-md hover:bg-white/70 transition duration-300 ease-in-out font-medium hover:cursor-pointer'>
-          <p className='text-sm'>Add to Favorites</p>
-          <HeartIcon size={16} className='relative top-[1px]' />
+        <button
+          onClick={onToggleFavorite}
+          className={`w-[140px] flex items-center gap-2 px-6 py-2 rounded-full shadow-md transition duration-300 ease-in-out font-medium hover:cursor-pointer ${
+            isFavorite ? 'bg-white text-black hover:bg-white/70' : 'bg-white text-black hover:bg-white/70'
+          }`}
+        >
+          <p className='text-sm'>
+            {isFavorite ? 'Remove Favorite' : 'Add to Favorites'}
+          </p>
+          <HeartIcon
+            size={16}
+            className={`relative top-[1px] ${isFavorite ? 'fill-current text-black' : ''}`}
+          />
         </button>
       </div>
     </motion.div>
