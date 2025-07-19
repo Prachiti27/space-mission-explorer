@@ -13,11 +13,11 @@ import ISRO_logo from './agency_logos/ISRO_logo.svg'
 import Jaxa_logo from './agency_logos/Jaxa_logo.svg'
 import KARI from './agency_logos/KARI.png'
 import NASA_logo from './agency_logos/NASA_logo.svg'
-import Roscosmos_logo from './agency_logos/Roscosmoslogo.svg'
+import Roscosmos_logo from './agency_logos/Roscosmos_logo.svg'
 import SpaceIL_logo from './agency_logos/SpaceIL_logo.svg'
 import SpaceX_Logo from './agency_logos/SpaceX_Logo.svg'
-import UAESA from './agency_logos/UAESA.svg'
-import CNSA from './agency_logos/CNSA'
+import UAESA from './agency_logos/UAESA_Logo.svg'
+import CNSA from './agency_logos/CNSA.svg'
 import Aditya_L1 from './missions/Aditya_L1.jpg';
 import akatsuki from './missions/akatsuki.jpg';
 import apollo11 from './missions/apollo11.jpg';
@@ -26,8 +26,8 @@ import BepiColombo from './missions/BepiColombo.png';
 import Beresheet from './missions/Beresheet.jpg';
 import Chandrayaan_1 from './missions/Chandrayaan-1.jpg';
 import chandrayaan3 from './missions/chandrayaan3.webp';
-import Chang_e_6 from './missions/Chang_e 6.jpg';
-import ChangE_4 from './missions/ChangE-4.png';
+import Change6 from './missions/Change6.jpg';
+import Change4 from './missions/Change4.png';
 import Danuri from './missions/Danuri.png';
 import Euclid from './missions/Euclid.jpeg';
 import Gaganyaan from './missions/Gaganyaan.avif';
@@ -35,10 +35,10 @@ import Giotto from './missions/Giotto.jpeg';
 import Hayabusa from './missions/Hayabusa.jpeg';
 import Hayabusa2 from './missions/Hayabusa2.jpg';
 import Hope_mars from './missions/Hope_mars.jpeg';
-import hubble from './missions/hubble.jpg';
-import James_tele from './missions/James_tele.webp';
+import hubble from './missions/hubble.jpeg';
+import JamesTele from './missions/JamesTele.jpg';
 import Mangalyaan from './missions/Mangalyaan.jpeg';
-import mars_rover from './missions/mars_rover.jpg';
+import mars_rover from './missions/mars_rover.jpeg';
 import Mir_Space_Station from './missions/Mir_Space_Station.jpg';
 import MMX from './missions/MMX.jpeg';
 import Rosetta from './missions/Rosetta.jpg';
@@ -53,8 +53,7 @@ import Vostok from './missions/Vostok.jpg';
 import voyager1and2 from './missions/voyager1&2.png';
 import Crew_Dragon from './missions/Crew_Dragon.jpg';
 
-
-export const missions = [
+const missions = [
     {
         "missionId": 1,
         "missionName": "Apollo 11",
@@ -87,7 +86,7 @@ export const missions = [
         "country": "United States of America",
         "missionStatus": "ongoing",
         "description": "A joint mission with the European Space Agency, the Hubble Space Telescope has revolutionized astronomy by providing stunning, high-resolution images of the universe. Its discoveries have reshaped our understanding of the cosmos, from distant galaxies to planetary nebulae, and continue to provide groundbreaking data.",
-        "agencyLogo": {NASA_logo,ESA_logo},
+        "agencyLogo": NASA_logo,
         "countryFlag": Flag_of_the_United_States,
         "missionImage": hubble
     },
@@ -197,7 +196,7 @@ export const missions = [
         "description": "Chang'e 4 achieved the first-ever soft landing on the far side of the Moon, a technically challenging feat due to communication difficulties. The mission's lander and rover (Yutu-2) have been conducting scientific research in a previously unexplored region, providing unique data on lunar geology.",
         "agencyLogo": CNSA,
         "countryFlag": Flag_of_China,
-        "missionImage": ChangE_4
+        "missionImage": Change4
     },
     {
         "missionId": 13,
@@ -233,7 +232,7 @@ export const missions = [
         "description": "This groundbreaking mission successfully collected and returned the first-ever samples from the far side of the Moon, a complex and unprecedented feat. It builds on the success of previous Chang'e missions and furthers our understanding of lunar geology and evolution, providing invaluable scientific material.",
         "agencyLogo": CNSA,
         "countryFlag": Flag_of_China,
-        "missionImage": Chang_e_6
+        "missionImage": Change6
     },
     {
         "missionId": 16,
@@ -263,11 +262,11 @@ export const missions = [
         "missionId": 18,
         "missionName": "BepiColombo",
         "missionYear": 2018,
-        "agency": "ESA & JAXA",
+        "agency": "JAXA",
         "country": "Europe",
         "missionStatus": "ongoing",
         "description": "A joint mission with JAXA, BepiColombo is on its way to Mercury, expected to arrive in 2025 after a complex series of flybys. It will study the planet's composition, magnetosphere, and internal structure to understand its formation and evolution in the inner solar system, using two separate orbiters.",
-        "agencyLogo": {ESA_logo,Jaxa_logo},
+        "agencyLogo": Jaxa_logo,
         "countryFlag": Flag_of_Europe,
         "missionImage": BepiColombo
     },
@@ -279,9 +278,9 @@ export const missions = [
         "country": "Europe",
         "missionStatus": "ongoing",
         "description": "A successor to Hubble, the James Webb Space Telescope is the most powerful space telescope ever built, observing primarily in infrared light. It is designed to observe the most distant objects in the universe, study the formation of the first galaxies and stars, and characterize exoplanet atmospheres.",
-        "agencyLogo": {NASA_logo,ESA_logo},
+        "agencyLogo": ESA_logo,
         "countryFlag": Flag_of_Europe,
-        "missionImage": James_tele
+        "missionImage": JamesTele
     },
     {
         "missionId": 20,
@@ -464,3 +463,5 @@ export const missions = [
         "missionImage": Crew_Dragon
     }
 ]
+
+export default missions
