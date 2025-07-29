@@ -11,7 +11,7 @@ const MissionCard = ({ mission, onDetailsClick, isFavorite, onToggleFavorite }) 
 
   return (
     <motion.div
-      className='w-[280px] md:w-[320px] h-auto border border-white/50 p-6 flex flex-col items-center gap-4 rounded-xl bg-[#111] hover:bg-black/90'
+      className='w-[280px] md:w-[320px] h-auto border border-white/50 p-6 flex flex-col items-center gap-4 rounded-xl bg-black/50 hover:bg-black/90'
       variants={cardVariants}
       initial='hidden'
       animate='visible'

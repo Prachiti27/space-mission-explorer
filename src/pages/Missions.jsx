@@ -40,7 +40,9 @@ const Missions = () => {
   }
 
   return (
-    <section className='w-full min-h-screen bg-[#0b0b0b] text-white py-16 px-6 md:px-20'>
+    <section className='w-full min-h-screen bg-[#0b0b0b] text-white py-16 px-6 md:px-20'
+    style={{backgroundImage: "url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto=format&fit=crop')"}}
+    >
       <div className='max-w-7xl mx-auto text-center mb-12'>
         <motion.h1
           className='text-4xl md:text-5xl font-bold mb-4'
